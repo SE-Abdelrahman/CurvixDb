@@ -75,6 +75,8 @@ namespace CurvixDb.Migrations
 
                             t.HasCheckConstraint("CK_AiPredictions_Deformity_Valid", "[DetectedDeformity] IN ('Normal', 'Scoliosis', 'Kyphosis', 'Lordosis')");
                         });
+
+                    b.HasAnnotation("SqlServer:UseSqlOutputClause", false);
                 });
 
             modelBuilder.Entity("CurvixDb.Models.Examinations.Examination", b =>
@@ -206,6 +208,8 @@ namespace CurvixDb.Migrations
 
                             t.HasCheckConstraint("CK_MedicalReports_Deformity_Valid", "[FinalDeformity] IN ('Normal', 'Scoliosis', 'Kyphosis', 'Lordosis')");
                         });
+
+                    b.HasAnnotation("SqlServer:UseSqlOutputClause", false);
                 });
 
             modelBuilder.Entity("CurvixDb.Models.Patients.Patient", b =>
@@ -230,7 +234,8 @@ namespace CurvixDb.Migrations
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar");
 
                     b.HasKey("PatientId");
 
@@ -284,7 +289,8 @@ namespace CurvixDb.Migrations
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar");
 
                     b.Property<string>("PasswordHash")
                         .IsRequired()

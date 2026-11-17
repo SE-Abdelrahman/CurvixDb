@@ -13,6 +13,7 @@ namespace CurvixDb.Configurations.AiPredictions
                 t.HasCheckConstraint("CK_AiPredictions_Deformity_Valid", "[DetectedDeformity] IN ('Normal', 'Scoliosis', 'Kyphosis', 'Lordosis')");
                 t.HasCheckConstraint("CK_AiPredictions_Confidence_Range", "[ConfidenceScore] >= 0 AND [ConfidenceScore] <= 1");
                 t.HasCheckConstraint("CK_AiPredictions_Angle_Range", "[MeasuredAngle] >= 0 AND [MeasuredAngle] <= 180");
+                t.UseSqlOutputClause(false);       // Triggers
             });
 
             builder.HasKey(ai => ai.PredictionId);

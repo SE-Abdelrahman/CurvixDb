@@ -17,6 +17,10 @@
 
   <ItemGroup>
     <Folder Include="DatabaseScripts\Functions\" />
+    <Folder Include="DatabaseScripts\Indexes\" />
+    <Folder Include="DatabaseScripts\Triggers\" />
+    <Folder Include="DatabaseScripts\Views\" />
+    <Folder Include="DatabaseScripts\Procedures\" />
   </ItemGroup>
 
   <ItemGroup>
@@ -39,6 +43,66 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="DatabaseScripts\Functions\fn_IsExamReadyForReport.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="DatabaseScripts\Indexes\IX_Examinations_Status_ExamDate.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="DatabaseScripts\Indexes\IX_MedicalReports_ApprovedAt.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="DatabaseScripts\Indexes\IX_MedicalReports_FinalDeformity.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="DatabaseScripts\Indexes\IX_Patients_Name.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="DatabaseScripts\Procedures\sp_ApproveMedicalReport.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="DatabaseScripts\Procedures\sp_CreateExaminationWithImage.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="DatabaseScripts\Procedures\sp_GetPatientFullHistory.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="DatabaseScripts\Procedures\sp_GetSystemDashboardStats.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="DatabaseScripts\Procedures\sp_GetUserWorklist.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="DatabaseScripts\Procedures\sp_InvalidateImageAndCancelExam.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="DatabaseScripts\Procedures\sp_RegisterPatientWithPhones.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="DatabaseScripts\Procedures\sp_RegisterUserWithPhones.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="DatabaseScripts\Procedures\sp_SaveAiPrediction.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="DatabaseScripts\Triggers\trg_AfterInsertAiPrediction.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="DatabaseScripts\Triggers\trg_AfterInsertMedicalReport.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="DatabaseScripts\Triggers\trg_PreventCompletedExamModification.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="DatabaseScripts\Views\vw_AiPerformanceAudit.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="DatabaseScripts\Views\vw_FullMedicalReports.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="DatabaseScripts\Views\vw_PatientExaminationSummary.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="DatabaseScripts\Views\vw_UserDirectoryAndHierarchy.sql">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>

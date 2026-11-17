@@ -26,7 +26,8 @@ namespace CurvixDb.Configurations.Patients
 
             builder.Property(p => p.Name)
                    .IsRequired()
-                   .HasColumnType("nvarchar(max)");
+                   .HasColumnType("nvarchar")
+                   .HasMaxLength(500);
 
             builder.Property(p => p.Gender)
                    .HasConversion<string>()

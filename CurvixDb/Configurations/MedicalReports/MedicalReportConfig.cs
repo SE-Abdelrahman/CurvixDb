@@ -12,6 +12,7 @@ namespace CurvixDb.Configurations.MedicalReports
             {
                 t.HasCheckConstraint("CK_MedicalReports_Deformity_Valid", "[FinalDeformity] IN ('Normal', 'Scoliosis', 'Kyphosis', 'Lordosis')");
                 t.HasCheckConstraint("CK_MedicalReports_Angle_Range", "[FinalAngle] >= 0 AND [FinalAngle] <= 180");
+                t.UseSqlOutputClause(false);       // Triggers
             });
 
             builder.HasKey(mr => mr.ReportId);

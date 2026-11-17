@@ -19,7 +19,8 @@ namespace CurvixDb.Configurations.Users
 
             builder.Property(u => u.Name)
                    .IsRequired()
-                   .HasColumnType("nvarchar(max)");
+                   .HasColumnType("nvarchar")
+                   .HasMaxLength(500);
 
             builder.Property(u => u.Email)
                    .IsRequired()
